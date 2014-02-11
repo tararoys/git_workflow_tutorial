@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Git workflow tutorial : Git workflow by a Git Beginner" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Git workflow tutorial</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tararoys/Git_Workflow_Tutorial">View on GitHub</a>
+
+          <h1 id="project_title">Git workflow tutorial</h1>
+          <h2 id="project_tagline">Git workflow by a Git Beginner</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tararoys/Git_Workflow_Tutorial/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tararoys/Git_Workflow_Tutorial/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="git-workflow" class="anchor" href="#git-workflow"><span class="octicon octicon-link"></span></a>Git workflow</h1>
+
+<p>To understand git on a conceptual level, visit this <a href="http://pcottle.github.io/learnGitBranching/">git visual demo</a>, the most epic git tutorial on the web. </p>
+
+<p>We are choosing to work with a branching workflow. Every pair works in their own branch, and when we have our branch working to our satisfaction, we merge it into the master branch.</p>
+
+<h3>
+<a name="set-up-github-repository" class="anchor" href="#set-up-github-repository"><span class="octicon octicon-link"></span></a>Set up github repository</h3>
+
+<pre><code>Set up git repository and add everyone as collaborators. 
+</code></pre>
+
+<h3>
+<a name="clone-repository-onto-everyones-local-machine" class="anchor" href="#clone-repository-onto-everyones-local-machine"><span class="octicon octicon-link"></span></a>Clone Repository onto everyone's local machine</h3>
+
+<pre><code>git clone https://github.com/KevinFalank/web_flashcards.git web_flashacards
+</code></pre>
+
+<h3>
+<a name="commit" class="anchor" href="#commit"><span class="octicon octicon-link"></span></a>Commit</h3>
+
+<pre><code>git add 
+git commit -v 
+</code></pre>
+
+<h3>
+<a name="pull-in-changes-other-people-have-made" class="anchor" href="#pull-in-changes-other-people-have-made"><span class="octicon octicon-link"></span></a>Pull in changes other people have made.</h3>
+
+<p><em>Git is collaborative software, so people will add stuff when you are not looking. You'll want to check to for changes fairly often, and add them to your project. Use the git pull command to 'pull' the new shiny stuff into your copy.</em></p>
+
+<pre><code>git pull 
+</code></pre>
+
+<h3>
+<a name="create-a-new-branch-for-new-features" class="anchor" href="#create-a-new-branch-for-new-features"><span class="octicon octicon-link"></span></a>Create a new branch for new features</h3>
+
+<p><em>To create a new branch on the local machine, git checkout -b.  This creates a new branch. The branch should be named with your first three initials and the feature you are working on.</em> </p>
+
+<pre><code>git checkout -b TLR/Add-git-workflow-to-readme
+</code></pre>
+
+<p><em>In this example, the branch is names TLR/Add-git-workflow-to-readme</em></p>
+
+<p>Now follow the normal commit workflow until you have a feature.</p>
+
+<p><em>To make the branch appear on github, use git push -u origin.  Instead of pushing to master, in the place where you would usually type master, type the name of your branch. This will create a new branch on the remote repository called TLR/awesome-git-workflow-readme.</em></p>
+
+<pre><code>git push -u origin TLR/Add-git-workflow-to-readme
+</code></pre>
+
+<p><em>Let's take apart this command.</em> </p>
+
+<ul>
+<li>'push' takes your changes and shoves them into github. </li>
+<li>'-u' tells git, basically, "Hey, you know this thing named TLR/Add-git-workflow here on my computer?  You ought to make one on that faraway githup computer called TLR/Add-git-workflow.  And then you should connect the two, so that I don't have to wear my fingers out typing origin TLR/Add-git-workflow all the time.  This connection is called 'tracking.' My local TLR/whatever is 'tracking' my remote TLR/whatever, so that all i have to do is type git push when I want to give my remote all the shiny new bits of code I've added. </li>
+<li>'origin' is the name of the computer out there in cloud-land that we are using to 'save' all our stuff. If I wanted to, I could name that computer 'cupcake.' </li>
+<li>'TLR/Add-git-workflow-to-readme' is the name of my branch.  By default, on the remote computer it will also be named TLR/Add-git-workflow-to-readme.  However, if I wanted the remote computer to name this branch something else, I could give it a different name, like 'squirrel'.  To connect the two, in the branch name section I would say</li>
+</ul><pre><code>   TLR/Add-git-workflow-to-readme:squirrel
+</code></pre>
+
+<p>After you have done a command with -u, when you are on this branch, you can just type </p>
+
+<pre><code>git push
+</code></pre>
+
+<h3>
+<a name="create-a-pull-request-to-merge-two-branches-together" class="anchor" href="#create-a-pull-request-to-merge-two-branches-together"><span class="octicon octicon-link"></span></a>Create a pull request to merge two branches together.</h3>
+
+<p>1.To create a pull request, go to the github website.</p>
+
+<ol>
+<li><p>Click on a branch.</p></li>
+<li><p>A button will appear saying "compare and pull request". Click it.
+<img src="README_pictures/compare_and_pull.png" alt=""></p></li>
+<li>
+<p>You will see a new screen asking you to write a pull request message.</p>
+
+<p><img src="README_pictures/pull_request_message.png" alt=""></p>
+
+<p>Github is smart, so it will look at your latest commit message.  The title of the pull request will be the first 80 characters of your commit message. The body of the pull request will be the rest of the commit message. If you wrote a good commit message, you can just press send pull request.</p>
+
+<p><img src="README_pictures/send_pull_request.png" alt=""></p>
+</li>
+<li><p>The pull request is created. Someone can now review your code.</p></li>
+<li>
+<p>Now pretend you are a code reviewer looking at a pull request. If there are no merge conflicts, you can press the merge pull request button.</p>
+
+<p><img src="README_pictures/merge_branch.png" alt=""></p>
+
+<p>Once the branch is merged, there is generally no point in keeping around the old branch. If you do, it clutters up your local repository. So you can delete it to keep things nice and clean.</p>
+
+<p><img src="README_pictures/delete_branch.png" alt=""></p>
+
+<p>If everyone works in their own file on the project, there will be no merge conflics. For right now, we will all work on our own files to avoid having to follow the merge conflict instructions below.</p>
+</li>
+</ol><h2>
+<a name="handling-a-merge-conflict" class="anchor" href="#handling-a-merge-conflict"><span class="octicon octicon-link"></span></a>Handling a merge conflict.</h2>
+
+<p>Before you push changes to the remote repository in the cloud, you will want to check and see if there are any big differences between what you have and what the remote repository has. Commit all of your changest to your local repository.  Then pull in Run </p>
+
+<pre><code> git pull
+</code></pre>
+
+<p>So, what do you do if you see the following? </p>
+
+<pre><code> Taras-MacBook-Air:web_flashcards tlroys$ git pull
+ Auto-merging README.md
+ CONFLICT (content): Merge conflict in README.md
+ Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+
+<p>This means that when I tried to stick all of the shiny new stuff from the cloud into my repository, somewhere someone wrote two things on the same line. Specifically, in the README, there are two different things that are trying to occupy the same place.  When two things try to occupy the same space, Git freaks out and tells us humans to deal with it. It presents us with the two things.  </p>
+
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+## Handling a pull request with merge conflicts. 
+
+   So.  It happened.  Two people edited the same file and tried to merge it. Oh no!  What do you do
+
+ =======
+ ## Handling a pull request with merge conflicts.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; d30ad19a99b65a94708662a971f467fc434faa19
+</code></pre>
+
+<p>Everything above the row of equals signs is one thing.  Everything below is the other thing.  Your mission, should you choose to accept it, is to choose what you actually want in that space. </p>
+
+<p>As it happens, I want the top bit. </p>
+
+<pre><code>## Handling a pull request with merge conflicts. 
+
+   So.  It happened.  Two people edited the same file and tried to merge it. Oh no!
+</code></pre>
+
+<p>After you decide what you want to keep, you delete everything else.</p>
+
+<h3>
+<a name="pulling-one-branch-into-another" class="anchor" href="#pulling-one-branch-into-another"><span class="octicon octicon-link"></span></a>Pulling one branch into another.</h3>
+
+<p>to merge one branch into anohter, </p>
+
+<p>let's say you are on the branch TLR/stuff</p>
+
+<p>To merge everythig in master into TLR/stuff, use the command </p>
+
+<pre><code> git merge master
+</code></pre>
+
+<p>This grabs everything from master and sticks it into TLR/stuff.  If there are merge conflicts, resolve them using the merge conflict procedure. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Git workflow tutorial maintained by <a href="https://github.com/tararoys">tararoys</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
