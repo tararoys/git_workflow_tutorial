@@ -1,5 +1,3 @@
-#Web Flashcards
-
 #Git workflow
 
 To understand git on a conceptual level, visit this [git visual demo](http://pcottle.github.io/learnGitBranching/), the most epic git tutorial on the web. 
