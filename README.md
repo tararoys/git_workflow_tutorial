@@ -2,6 +2,10 @@
 
 To understand git on a conceptual level, visit this [git visual demo](http://pcottle.github.io/learnGitBranching/), the most epic git tutorial on the web. 
 
+This is also a priceless, [difficult-to-find resource](http://sethrobertson.github.io/GitBestPractices/)
+
+For 
+
 We are chosing to work with a branching workflow. Every pair works in their own branch, and when we have our branch working to our satisfaction, we merge it into the master branch.
 
 ###Set up github repository
